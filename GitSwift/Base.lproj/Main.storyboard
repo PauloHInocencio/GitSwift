@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ynp-aa-pZI">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GitSwift-->
+        <scene sceneID="iF2-0g-3RW">
+            <objects>
+                <collectionViewController storyboardIdentifier="RepositoriesVC" id="pFL-ie-pkr" customClass="RepositoriesVC" customModule="GitSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="LZX-IU-7if">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.70588235294117641" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ez5-3P-H6w">
+                            <size key="itemSize" width="369" height="190"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="RepositoryCell" reuseIdentifier="repositoryCell" id="dK4-HW-9Iy" customClass="RepositoryCell" customModule="GitSwift" customModuleProvider="target">
+                                <rect key="frame" x="22.666666666666668" y="0.0" width="369" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="369" height="190"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7o-2m-dHt" userLabel="viewsContainer">
+                                            <rect key="frame" x="15" y="15" width="339" height="160"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Repositório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hko-ce-vj1" userLabel="repositoryName">
+                                                    <rect key="frame" x="10" y="13.999999999999998" width="203.66666666666666" height="23.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <color key="textColor" red="0.11764705882352941" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do repositório lorem ipsum dolor sit amet lorem ipsum dolor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6Q-SQ-m8s" userLabel="repositoryDescription">
+                                                    <rect key="frame" x="10" y="43" width="203.66666666666666" height="33"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
+                                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dQj-zi-ppE" userLabel="ownerInfoStackView">
+                                                    <rect key="frame" x="233.66666666666666" y="29.999999999999993" width="101.33333333333334" height="83.333333333333314"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" image="git_user_place_holder" translatesAutoresizingMaskIntoConstraints="NO" id="Ej4-Po-zXp" userLabel="ownerImage">
+                                                            <rect key="frame" x="25.999999999999972" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="gmU-oZ-Qar"/>
+                                                                <constraint firstAttribute="height" constant="50" id="sZJ-QW-0oV"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoc-aO-Abw" userLabel="ownerLogin">
+                                                            <rect key="frame" x="23.666666666666654" y="50" width="54.666666666666657" height="16.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
+                                                            <color key="textColor" red="0.1764705882" green="0.46274509800000002" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Sobrenome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMl-gu-tV2" userLabel="ownerInfo">
+                                                            <rect key="frame" x="1.3333333333333144" y="66.666666666666671" width="99" height="16.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JHg-Sp-8XM" userLabel="iconsStackView">
+                                                    <rect key="frame" x="10" y="86" width="97.666666666666671" height="16"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmV-Ae-0NG" userLabel="forkStackView">
+                                                            <rect key="frame" x="0.0" y="0.0" width="46.333333333333336" height="16"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="git_icon_fork" translatesAutoresizingMaskIntoConstraints="NO" id="Lzm-UQ-Njo" userLabel="forksIcon">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                                    <color key="tintColor" red="0.1764705882" green="0.46274509800000002" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="16" id="aq3-Td-kho"/>
+                                                                        <constraint firstAttribute="width" constant="16" id="b2U-XR-8mv"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="640" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBs-A9-kss" userLabel="forksCount">
+                                                                    <rect key="frame" x="15.999999999999998" y="0.0" width="30.333333333333329" height="16"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                                                    <color key="textColor" red="0.1176470588" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Wc7-rJ-qFh" userLabel="starsStackView">
+                                                            <rect key="frame" x="56.333333333333329" y="0.0" width="41.333333333333329" height="16"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="git_icon_star" translatesAutoresizingMaskIntoConstraints="NO" id="nEz-Xt-P2w" userLabel="starsIcon">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                                    <color key="tintColor" red="0.1764705882" green="0.46274509800000002" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="16" id="Hm0-2J-3a1"/>
+                                                                        <constraint firstAttribute="width" constant="16" id="kgj-Yq-ThW"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48m-NI-GIm" userLabel="starsCount">
+                                                                    <rect key="frame" x="21" y="0.0" width="20.333333333333329" height="16"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                                                    <color key="textColor" red="0.1176470588" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="b6Q-SQ-m8s" firstAttribute="trailing" secondItem="Hko-ce-vj1" secondAttribute="trailing" id="4i8-77-tor"/>
+                                                <constraint firstItem="dQj-zi-ppE" firstAttribute="top" secondItem="P7o-2m-dHt" secondAttribute="top" constant="30" id="8C5-gf-2rm"/>
+                                                <constraint firstItem="Hko-ce-vj1" firstAttribute="trailing" secondItem="dQj-zi-ppE" secondAttribute="leading" constant="-20" id="BGr-eW-Nhe"/>
+                                                <constraint firstAttribute="trailing" secondItem="dQj-zi-ppE" secondAttribute="trailing" constant="4" id="Vdh-BW-9TQ"/>
+                                                <constraint firstItem="Hko-ce-vj1" firstAttribute="leading" secondItem="P7o-2m-dHt" secondAttribute="leading" constant="10" id="Waw-CA-Cli"/>
+                                                <constraint firstItem="JHg-Sp-8XM" firstAttribute="top" secondItem="b6Q-SQ-m8s" secondAttribute="bottom" constant="10" id="YOM-XL-qO1"/>
+                                                <constraint firstItem="b6Q-SQ-m8s" firstAttribute="top" secondItem="Hko-ce-vj1" secondAttribute="bottom" constant="5" id="ZeO-1Y-T9g"/>
+                                                <constraint firstItem="Hko-ce-vj1" firstAttribute="top" secondItem="P7o-2m-dHt" secondAttribute="top" constant="14" id="aOZ-s9-d7A"/>
+                                                <constraint firstItem="b6Q-SQ-m8s" firstAttribute="leading" secondItem="Hko-ce-vj1" secondAttribute="leading" id="cC4-pJ-qVm"/>
+                                                <constraint firstItem="dQj-zi-ppE" firstAttribute="width" secondItem="P7o-2m-dHt" secondAttribute="width" multiplier="0.3" id="dcV-Zo-oQI"/>
+                                                <constraint firstItem="JHg-Sp-8XM" firstAttribute="leading" secondItem="Hko-ce-vj1" secondAttribute="leading" id="juy-mm-vSg"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.92549019607843142" green="1" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="P7o-2m-dHt" firstAttribute="leading" secondItem="dK4-HW-9Iy" secondAttribute="leading" constant="15" id="8H6-99-3OK"/>
+                                    <constraint firstItem="P7o-2m-dHt" firstAttribute="top" secondItem="dK4-HW-9Iy" secondAttribute="top" constant="15" id="Cok-ho-Wg0"/>
+                                    <constraint firstAttribute="trailing" secondItem="P7o-2m-dHt" secondAttribute="trailing" constant="15" id="Ht4-tO-u0K"/>
+                                    <constraint firstAttribute="bottom" secondItem="P7o-2m-dHt" secondAttribute="bottom" constant="15" id="c99-72-vUI"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="repositoryDescription" destination="b6Q-SQ-m8s" id="jN4-8a-J3J"/>
+                                    <outlet property="repositoryForkCount" destination="bBs-A9-kss" id="Bg6-CQ-4Lo"/>
+                                    <outlet property="repositoryForkIcon" destination="Lzm-UQ-Njo" id="XAI-IY-GRf"/>
+                                    <outlet property="repositoryName" destination="Hko-ce-vj1" id="S6G-wl-P3B"/>
+                                    <outlet property="repositoryOwnerInfo" destination="jMl-gu-tV2" id="I1r-Ja-tEC"/>
+                                    <outlet property="repositoryOwnerLogin" destination="Uoc-aO-Abw" id="PSf-v5-gft"/>
+                                    <outlet property="repositoryOwnerPhoto" destination="Ej4-Po-zXp" id="6uH-X5-E98"/>
+                                    <outlet property="repositoryStarsCount" destination="48m-NI-GIm" id="FUw-xv-BEn"/>
+                                    <outlet property="repositoryStarsIcon" destination="nEz-Xt-P2w" id="gLr-lU-Zwu"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="pFL-ie-pkr" id="xDc-zf-IH5"/>
+                            <outlet property="delegate" destination="pFL-ie-pkr" id="bUb-f9-ep6"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="GitSwift" id="bu1-X6-3dp"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDd-CS-v2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316" y="46.326836581709152"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vJv-KK-j4X">
+            <objects>
+                <navigationController id="ynp-aa-pZI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KYf-Mc-eDe">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pFL-ie-pkr" kind="relationship" relationship="rootViewController" id="eqx-zc-O3N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SQ2-gI-C3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1142" y="47"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="git_icon_fork" width="40" height="40"/>
+        <image name="git_icon_star" width="40" height="40"/>
+        <image name="git_user_place_holder" width="40" height="40"/>
+    </resources>
+</document>
