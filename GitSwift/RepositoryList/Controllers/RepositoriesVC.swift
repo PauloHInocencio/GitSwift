@@ -60,6 +60,12 @@ class RepositoriesVC: UICollectionViewController {
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        collectionView?.collectionViewLayout.invalidateLayout()
+    }
+    
 
 
 }
@@ -82,6 +88,9 @@ extension RepositoriesVC: UICollectionViewDelegateFlowLayout {
         }
         return CGSize(width: collectionView.bounds.size.width, height: 55)
     }
+    
+    
+    
 }
 
 
@@ -97,8 +106,6 @@ extension RepositoriesVC {
     func setupRefreshControl () {
         if #available(iOS 10.0, *) {
             let refreshControl = UIRefreshControl()
-            //let title = NSLocalizedString("PullToRefresh", comment: "Pull to refresh")
-            //refreshControl.attributedTitle = NSAttributedString(string: title)
             refreshControl.addTarget(self,
                                      action: #selector(refreshOptions(sender:)),
                                      for: .valueChanged)
