@@ -51,20 +51,20 @@
                                                     <rect key="frame" x="233.66666666666666" y="29.999999999999993" width="101.33333333333334" height="83.333333333333314"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" image="git_user_place_holder" translatesAutoresizingMaskIntoConstraints="NO" id="Ej4-Po-zXp" userLabel="ownerImage">
-                                                            <rect key="frame" x="25.999999999999972" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="25.666666666666657" y="0.0" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="gmU-oZ-Qar"/>
                                                                 <constraint firstAttribute="height" constant="50" id="sZJ-QW-0oV"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoc-aO-Abw" userLabel="ownerLogin">
-                                                            <rect key="frame" x="23.666666666666654" y="50" width="54.666666666666657" height="16.666666666666671"/>
+                                                            <rect key="frame" x="23.333333333333339" y="50" width="54.666666666666657" height="16.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
                                                             <color key="textColor" red="0.1764705882" green="0.46274509800000002" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Sobrenome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMl-gu-tV2" userLabel="ownerInfo">
-                                                            <rect key="frame" x="1.3333333333333144" y="66.666666666666671" width="99" height="16.666666666666671"/>
+                                                            <rect key="frame" x="1.3333333333333428" y="66.666666666666671" width="99" height="16.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>

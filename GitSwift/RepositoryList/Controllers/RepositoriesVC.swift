@@ -9,8 +9,15 @@
 import UIKit
 
 class RepositoriesVC: UICollectionViewController {
+    
+    let cellID = "repositoryCell"
+    let footerID = "footerID"
+    
     var store: GitStore!
-    let dataSorce = GitRepositoryDataSource()
+    var repositories = [GitRepository]()
+    
+    
+    //let dataSorce = GitRepositoryDataSource()
     var myActivityIndicator:UIActivityIndicatorView!
     var fetchingMore = true
 
@@ -23,10 +30,12 @@ class RepositoriesVC: UICollectionViewController {
         loadData()
     }
     
-    
+
     func setupCollectionView() {
         collectionView?.alwaysBounceVertical = true
-        collectionView?.dataSource = dataSorce
+        //collectionView?.dataSource = dataSorce
+        let nibReusableView = UINib(nibName: "ActivityIndicatorFooterView", bundle: nil)
+        collectionView?.register(nibReusableView, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerID)
 
     }
     
@@ -43,7 +52,7 @@ class RepositoriesVC: UICollectionViewController {
         fetchingMore = true
         store.getRepositories {
             (result) -> Void in
-            let lastIndex = self.dataSorce.repositories.count
+            let lastIndex = self.repositories.count
             
             self.myActivityIndicator.stopAnimating()
 
@@ -51,9 +60,9 @@ class RepositoriesVC: UICollectionViewController {
             
             switch result {
             case let .success(repositories):
-                self.dataSorce.repositories.insert(contentsOf: repositories, at: lastIndex)
+                self.repositories.insert(contentsOf: repositories, at: lastIndex)
             case .failure(_):
-                self.dataSorce.repositories.removeAll()
+                self.repositories.removeAll()
                 
             }
             self.collectionView?.reloadData()
@@ -62,15 +71,46 @@ class RepositoriesVC: UICollectionViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        
         collectionView?.collectionViewLayout.invalidateLayout()
     }
     
-
-
+    
+    
 }
 
-//MARK - Collection Layout Handler
+
+
+
+//MARK - CollectionView Data Source
+
+extension RepositoriesVC {
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return repositories.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! RepositoryCell
+        cell.repository = repositories[indexPath.item]
+        return cell
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: footerID, for: indexPath)
+        //footer.backgroundColor = .blue
+        return footer
+    }
+    
+    
+}
+
+
+
+
+
+
+//MARK - Collection Layout Delegate
 
 extension RepositoriesVC: UICollectionViewDelegateFlowLayout {
     
@@ -89,10 +129,9 @@ extension RepositoriesVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: collectionView.bounds.size.width, height: 55)
     }
     
-    
+
     
 }
-
 
 
 
@@ -124,10 +163,10 @@ extension RepositoriesVC {
             
             switch result {
             case let .success(repositories):
-                self.dataSorce.repositories.removeAll()
-                self.dataSorce.repositories = repositories
+                self.repositories.removeAll()
+                self.repositories = repositories
             case .failure(_):
-                self.dataSorce.repositories.removeAll()
+                self.repositories.removeAll()
                 
             }
             self.collectionView?.reloadData()
