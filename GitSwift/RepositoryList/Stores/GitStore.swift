@@ -11,13 +11,14 @@ import Foundation
 class GitStore {
     var currentPage:Int = 1
     var webservice:NetworkService!
+   
     
     func getRepositories(completion: @escaping (Result<[GitRepository]>) -> Void) {
         guard let url = GitApi.getSearchRepositoriesURL(page: currentPage) else {
             completion(Result.failure(AppError.badUrlError))
             return
         }
-        
+
         webservice.get(url) { (result) in
             switch result {
             case let .success(data):

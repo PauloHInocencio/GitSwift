@@ -9,9 +9,18 @@
 import Foundation
 
 struct GitRepositoryOwner:Decodable {
-    let login:String
-    let name:String?
-    let type:String?
-    let bio:String?
-    let avatar_url:String?
+    var login:String
+    var name:String?
+    var type:String?
+    var bio:String?
+    var avatar_url:String?
+    
+     init() {
+        login = ""
+        name = nil
+        type = nil
+        bio = nil
+        avatar_url = nil
+        
+    }
 }

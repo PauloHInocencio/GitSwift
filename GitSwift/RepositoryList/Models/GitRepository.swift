@@ -10,14 +10,20 @@ import Foundation
 
 struct GitRepository: Decodable, Comparable {
 
-    let name:String
-    let description:String?
-    let forks_count:Int?
-    let stargazers_count:Int?
-    let owner:GitRepositoryOwner?
+    var name:String
+    var description:String?
+    var forks_count:Int?
+    var stargazers_count:Int?
+    var owner:GitRepositoryOwner?
     
     
-
+    init() {
+        self.name = ""
+        self.description = nil
+        self.forks_count = nil
+        self.stargazers_count = nil
+        self.owner = nil
+    }
     
     static func == (lhs: GitRepository, rhs: GitRepository) -> Bool {
        return lhs.name == rhs.name

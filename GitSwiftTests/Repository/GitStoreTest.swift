@@ -29,7 +29,7 @@ class GitStoreTest: XCTestCase {
             case let .success(data):
                 repositores = data
             case .failure(_):
-                print("Failed to get respositories")
+                print("Failed to get repositories")
             }
             
             XCTAssertNotNil(repositores)
@@ -93,8 +93,6 @@ class GitStoreTest: XCTestCase {
         }
         
         waitForExpectations(timeout: 3, handler: nil)
-        
-        
     }
     
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D56694CF14FA71702F1904D /* Pods_GitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0118889EAE6FB222002DB9 /* Pods_GitSwift.framework */; };
+		3A6FDFF920AC111700828C25 /* RxGitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6FDFF820AC111700828C25 /* RxGitStore.swift */; };
+		3A6FDFFB20AC158700828C25 /* RxGitStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6FDFFA20AC158700828C25 /* RxGitStoreTest.swift */; };
 		3A73CE382090AA36005BEC29 /* HttpAlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A73CE372090AA36005BEC29 /* HttpAlamofireClient.swift */; };
 		3A73CE3A2090BF7C005BEC29 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A73CE392090BF7C005BEC29 /* Result.swift */; };
 		3A73CE3E2090C07A005BEC29 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A73CE3D2090C07A005BEC29 /* NetworkService.swift */; };
@@ -24,6 +26,8 @@
 		3A73CE64209218D8005BEC29 /* GitServerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A73CE63209218D8005BEC29 /* GitServerMessage.swift */; };
 		3A73CE69209238CB005BEC29 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A73CE68209238CB005BEC29 /* RepositoryCell.swift */; };
 		3A73CE6B20927B2E005BEC29 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A73CE6A20927B2E005BEC29 /* Colors.swift */; };
+		3A825D9520A597DC0023AA98 /* HttpRxAlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A825D9420A597DC0023AA98 /* HttpRxAlamofireClient.swift */; };
+		3A825D9720A5AE2E0023AA98 /* HttpRxAlamofireClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A825D9620A5AE2E0023AA98 /* HttpRxAlamofireClientTest.swift */; };
 		3AA7FA3120909AAB00B0E412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7FA3020909AAB00B0E412 /* AppDelegate.swift */; };
 		3AA7FA3320909AAB00B0E412 /* RepositoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7FA3220909AAB00B0E412 /* RepositoriesVC.swift */; };
 		3AA7FA3620909AAB00B0E412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA7FA3420909AAB00B0E412 /* Main.storyboard */; };
@@ -53,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		114A15F32AAAC09F962D9767 /* Pods-GitSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitSwift/Pods-GitSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		3A6FDFF820AC111700828C25 /* RxGitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGitStore.swift; sourceTree = "<group>"; };
+		3A6FDFFA20AC158700828C25 /* RxGitStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGitStoreTest.swift; sourceTree = "<group>"; };
 		3A73CE372090AA36005BEC29 /* HttpAlamofireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpAlamofireClient.swift; sourceTree = "<group>"; };
 		3A73CE392090BF7C005BEC29 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3A73CE3D2090C07A005BEC29 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -69,6 +75,8 @@
 		3A73CE63209218D8005BEC29 /* GitServerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitServerMessage.swift; sourceTree = "<group>"; };
 		3A73CE68209238CB005BEC29 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		3A73CE6A20927B2E005BEC29 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3A825D9420A597DC0023AA98 /* HttpRxAlamofireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRxAlamofireClient.swift; sourceTree = "<group>"; };
+		3A825D9620A5AE2E0023AA98 /* HttpRxAlamofireClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRxAlamofireClientTest.swift; sourceTree = "<group>"; };
 		3AA7FA2D20909AAB00B0E412 /* GitSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA7FA3020909AAB00B0E412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AA7FA3220909AAB00B0E412 /* RepositoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesVC.swift; sourceTree = "<group>"; };
@@ -148,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				3A73CE372090AA36005BEC29 /* HttpAlamofireClient.swift */,
+				3A825D9420A597DC0023AA98 /* HttpRxAlamofireClient.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -192,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				3A73CE432090D983005BEC29 /* HttpAlamofireClientTest.swift */,
+				3A825D9620A5AE2E0023AA98 /* HttpRxAlamofireClientTest.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -200,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				3A73CE4B2090F898005BEC29 /* GitStore.swift */,
+				3A6FDFF820AC111700828C25 /* RxGitStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -208,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				3A73CE5E2091FD64005BEC29 /* GitStoreTest.swift */,
+				3A6FDFFA20AC158700828C25 /* RxGitStoreTest.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -363,6 +375,7 @@
 				3AA7FA3D20909AAE00B0E412 /* Sources */,
 				3AA7FA3E20909AAE00B0E412 /* Frameworks */,
 				3AA7FA3F20909AAE00B0E412 /* Resources */,
+				E35A3907E3E1BD4C0F2253B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -509,16 +522,44 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitSwift/Pods-GitSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitSwift/Pods-GitSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E35A3907E3E1BD4C0F2253B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GitSwiftTests/Pods-GitSwiftTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitSwiftTests/Pods-GitSwiftTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -537,10 +578,12 @@
 				3A73CE3A2090BF7C005BEC29 /* Result.swift in Sources */,
 				3AE403812099A116001B6B12 /* ActivityIndicatorFooterViewCollectionReusableView.swift in Sources */,
 				3A73CE4C2090F898005BEC29 /* GitStore.swift in Sources */,
+				3A825D9520A597DC0023AA98 /* HttpRxAlamofireClient.swift in Sources */,
 				3A73CE64209218D8005BEC29 /* GitServerMessage.swift in Sources */,
 				3A73CE382090AA36005BEC29 /* HttpAlamofireClient.swift in Sources */,
 				3A73CE5B2091D5DA005BEC29 /* AppError.swift in Sources */,
 				3A73CE462090ED04005BEC29 /* GitApi.swift in Sources */,
+				3A6FDFF920AC111700828C25 /* RxGitStore.swift in Sources */,
 				3A73CE6220920A25005BEC29 /* Array.swift in Sources */,
 				3A73CE4F20910A50005BEC29 /* GitRepository.swift in Sources */,
 				3A73CE5120910CE2005BEC29 /* GitRepositoryOwner.swift in Sources */,
@@ -552,8 +595,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A73CE442090D983005BEC29 /* HttpAlamofireClientTest.swift in Sources */,
+				3A825D9720A5AE2E0023AA98 /* HttpRxAlamofireClientTest.swift in Sources */,
 				3A73CE5F2091FD64005BEC29 /* GitStoreTest.swift in Sources */,
 				3A73CE4A2090F213005BEC29 /* GitApiTest.swift in Sources */,
+				3A6FDFFB20AC158700828C25 /* RxGitStoreTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

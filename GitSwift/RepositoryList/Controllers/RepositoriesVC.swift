@@ -7,19 +7,21 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RepositoriesVC: UICollectionViewController {
     
     let cellID = "repositoryCell"
     let footerID = "footerID"
     
-    var store: GitStore!
+    //var store: GitStore!
+    var store: RxGitStore!
     var repositories = [GitRepository]()
     
-    
-    //let dataSorce = GitRepositoryDataSource()
     var myActivityIndicator:UIActivityIndicatorView!
     var fetchingMore = true
+    let dispose = DisposeBag()
 
 
     override func viewDidLoad() {
@@ -33,7 +35,6 @@ class RepositoriesVC: UICollectionViewController {
 
     func setupCollectionView() {
         collectionView?.alwaysBounceVertical = true
-        //collectionView?.dataSource = dataSorce
         let nibReusableView = UINib(nibName: "ActivityIndicatorFooterView", bundle: nil)
         collectionView?.register(nibReusableView, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerID)
 
@@ -50,7 +51,7 @@ class RepositoriesVC: UICollectionViewController {
         myActivityIndicator.startAnimating()
 
         fetchingMore = true
-        store.getRepositories {
+        /*store.getRepositories {
             (result) -> Void in
             let lastIndex = self.repositories.count
             
@@ -66,7 +67,22 @@ class RepositoriesVC: UICollectionViewController {
                 
             }
             self.collectionView?.reloadData()
-        }
+        }*/
+        store.getRepositories()
+            .drive(onNext: { repos in
+                let lastIndex = self.repositories.count
+                
+                self.myActivityIndicator.stopAnimating()
+                
+                self.fetchingMore = false
+                
+                self.repositories.insert(contentsOf: repos, at: lastIndex)
+                
+                self.collectionView?.reloadData()
+                
+            })
+            .disposed(by: dispose)
+        
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -81,7 +97,7 @@ class RepositoriesVC: UICollectionViewController {
 
 
 
-//MARK - CollectionView Data Source
+//MARK: - CollectionView Data Source
 
 extension RepositoriesVC {
     
@@ -98,19 +114,12 @@ extension RepositoriesVC {
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: footerID, for: indexPath)
-        //footer.backgroundColor = .blue
         return footer
     }
-    
-    
 }
 
 
-
-
-
-
-//MARK - Collection Layout Delegate
+//MARK: - Collection Layout Delegate
 
 extension RepositoriesVC: UICollectionViewDelegateFlowLayout {
     
@@ -134,12 +143,7 @@ extension RepositoriesVC: UICollectionViewDelegateFlowLayout {
 }
 
 
-
-
-
-
-
-//MARK - UIScrollView Delegate
+//MARK: - UIScrollView Delegate
 extension RepositoriesVC {
     
     func setupRefreshControl () {
@@ -152,10 +156,8 @@ extension RepositoriesVC {
         }
     }
     
-    
-    
     @objc private func refreshOptions(sender: UIRefreshControl) {
-        store.currentPage = 1
+        /*store.currentPage = 1
         store.getRepositories {
             (result) -> Void in
             
@@ -170,7 +172,7 @@ extension RepositoriesVC {
                 
             }
             self.collectionView?.reloadData()
-        }
+        }*/
         
         
     }

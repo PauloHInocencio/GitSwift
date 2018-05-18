@@ -19,9 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let rootViewController = window!.rootViewController as! UINavigationController
         let repositoriesVC = rootViewController.topViewController as! RepositoriesVC
-        let store = GitStore()
-        store.webservice = HttpAlamofireClient()
-        repositoriesVC.store = store
+        //let store = GitStore()
+        let rxStore = RxGitStore()
+        //store.webservice = HttpAlamofireClient()
+        //repositoriesVC.store = store
+        repositoriesVC.store = rxStore
         
         return true
     }

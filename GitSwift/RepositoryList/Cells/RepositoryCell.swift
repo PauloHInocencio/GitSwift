@@ -44,13 +44,25 @@ class RepositoryCell: UICollectionViewCell {
                 
                 repositoryName.text = repository.name
                 repositoryDescription.text = repository.description
-                repositoryForkCount.text = "\(repository.forks_count!)"
-                repositoryStarsCount.text = "\(repository.stargazers_count!)"
-                repositoryOwnerLogin.text = repository.owner!.login
                 
-                repositoryOwnerPhoto.sd_setImage(with: URL(string: repository.owner!.avatar_url!), placeholderImage: #imageLiteral(resourceName: "git_user_place_holder"))
+                if
+                    let forks = repository.forks_count,
+                    let stars = repository.stargazers_count {
+                        repositoryForkCount.text = "\(forks)"
+                        repositoryStarsCount.text = "\(stars)"
+                }
                 
-            
+
+                if let owner = repository.owner {
+                    repositoryOwnerLogin.text = owner.login
+                    repositoryOwnerPhoto.sd_setImage(with: URL(string: owner.avatar_url!), placeholderImage: #imageLiteral(resourceName: "git_user_place_holder"))
+                    
+                    if let ownerBio = owner.bio {
+                        repositoryOwnerInfo.text = ownerBio
+                    } else if let ownerName = owner.name {
+                        repositoryOwnerInfo.text = ownerName
+                    }
+                }
                 
                 
             }
