@@ -25,24 +25,6 @@ class RxGitStoreTest: XCTestCase {
     
     func test_if_store_returns_data() {
         
-        /*let requestAnswered = expectation(description: "GetGitRepositories")
-        
-        var repositories:[GitRepository]? = nil
-        
-        gitstore.getRepositories()
-            .drive(onNext: { repos in
-                repositories = repos
-                requestAnswered.fulfill()
-            })
-            .disposed(by: dispose)
-        
-        
-        waitForExpectations(timeout: 10) { (_) in
-            XCTAssertNotNil(repositories)
-            XCTAssertEqual(repositories?.count, 30)
-        }*/
-        
-        
         let repositories = try! gitstore.getRepositories().toBlocking().toArray().first
         
         XCTAssertNotNil(repositories)
@@ -73,7 +55,7 @@ class RxGitStoreTest: XCTestCase {
     }
     
     func test_if_store_returns_empty_array_when_hits_the_limit_page() {
-        let requestAnswered = expectation(description: "GetGitRepositories")
+        /* let requestAnswered = expectation(description: "GetGitRepositories")
         
         var repositories:[GitRepository]?
         
@@ -89,7 +71,9 @@ class RxGitStoreTest: XCTestCase {
         waitForExpectations(timeout: 5) { (_) in
             XCTAssertNotNil(repositories)
             XCTAssertEqual(repositories?.count, 0)
-        }
+        } */
+        
+        
         
     }
 }

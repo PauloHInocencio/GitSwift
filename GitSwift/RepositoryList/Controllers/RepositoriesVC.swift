@@ -14,11 +14,8 @@ class RepositoriesVC: UICollectionViewController {
     
     let cellID = "repositoryCell"
     let footerID = "footerID"
-    
-    //var store: GitStore!
     var store: RxGitStore!
     var repositories = [GitRepository]()
-    
     var myActivityIndicator:UIActivityIndicatorView!
     var fetchingMore = true
     let dispose = DisposeBag()
@@ -32,7 +29,6 @@ class RepositoriesVC: UICollectionViewController {
         loadData()
     }
     
-
     func setupCollectionView() {
         collectionView?.alwaysBounceVertical = true
         let nibReusableView = UINib(nibName: "ActivityIndicatorFooterView", bundle: nil)
@@ -48,36 +44,16 @@ class RepositoriesVC: UICollectionViewController {
     }
     
     func loadData() {
+        fetchingMore = true
         myActivityIndicator.startAnimating()
 
-        fetchingMore = true
-        /*store.getRepositories {
-            (result) -> Void in
-            let lastIndex = self.repositories.count
-            
-            self.myActivityIndicator.stopAnimating()
-
-            self.fetchingMore = false
-            
-            switch result {
-            case let .success(repositories):
-                self.repositories.insert(contentsOf: repositories, at: lastIndex)
-            case .failure(_):
-                self.repositories.removeAll()
-                
-            }
-            self.collectionView?.reloadData()
-        }*/
         store.getRepositories()
             .drive(onNext: { repos in
-                let lastIndex = self.repositories.count
-                
+                self.fetchingMore = false
                 self.myActivityIndicator.stopAnimating()
                 
-                self.fetchingMore = false
-                
+                let lastIndex = self.repositories.count
                 self.repositories.insert(contentsOf: repos, at: lastIndex)
-                
                 self.collectionView?.reloadData()
                 
             })
@@ -89,9 +65,6 @@ class RepositoriesVC: UICollectionViewController {
         super.viewWillTransition(to: size, with: coordinator)
         collectionView?.collectionViewLayout.invalidateLayout()
     }
-    
-    
-    
 }
 
 
@@ -157,24 +130,14 @@ extension RepositoriesVC {
     }
     
     @objc private func refreshOptions(sender: UIRefreshControl) {
-        /*store.currentPage = 1
-        store.getRepositories {
-            (result) -> Void in
-            
-            sender.endRefreshing()
-            
-            switch result {
-            case let .success(repositories):
+        store.currentPage = 0
+        store.getRepositories()
+            .drive(onNext: { repos in
+                sender.endRefreshing()
                 self.repositories.removeAll()
-                self.repositories = repositories
-            case .failure(_):
-                self.repositories.removeAll()
-                
-            }
-            self.collectionView?.reloadData()
-        }*/
-        
-        
+                self.repositories = repos
+                self.collectionView?.reloadData()
+            }).disposed(by: dispose)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

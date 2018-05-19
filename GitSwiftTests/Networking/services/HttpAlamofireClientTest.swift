@@ -76,12 +76,11 @@ class HttpAlamofireClientTest: XCTestCase {
         
     }
     
-    
-    
     func test_if_the_request_for_repo_owner_return_success() {
         let requestAnswered = expectation(description: "Repositories")
-        guard let _url = GitApi.getReposioryOwnerInfosURL(login: "Ramotion") else {
-            fatalError("Bad url error!")
+        guard let _url = GitApi.getReposioryOwnerInfosURL(login: "Alamofire") else {
+            XCTFail("Bad url error!")
+            return
         }
         
         webservice.get(_url) { (response) in
@@ -107,8 +106,9 @@ class HttpAlamofireClientTest: XCTestCase {
     func test_if_request_result_can_be_parsing_into_repo_owner() {
         
         let requestAnswered = expectation(description: "Repositories")
-        guard let _url = GitApi.getReposioryOwnerInfosURL(login: "Ramotion") else {
-            fatalError("Bad url error!")
+        guard let _url = GitApi.getReposioryOwnerInfosURL(login: "Alamofire") else {
+            XCTFail("Bad url error!")
+            return
         }
         var owner:GitRepositoryOwner?
         
@@ -143,7 +143,8 @@ class HttpAlamofireClientTest: XCTestCase {
     func test_if_the_request_for_repo_owner_image_return_success() {
         let requestAnswered = expectation(description: "Repositories")
         guard let _url = GitApi.getReposioryOwnerInfosURL(login: "Ramotion") else {
-            fatalError("Bad url error!")
+            XCTFail("Bad url error!")
+            return
         }
         
         var owner:GitRepositoryOwner?
@@ -166,7 +167,8 @@ class HttpAlamofireClientTest: XCTestCase {
             guard
                 let image_url_string = owner?.avatar_url,
                 let image_url = URL(string: image_url_string) else {
-                    fatalError("Bad url error!")
+                    XCTFail("Bad url error!")
+                    return
             }
             
             self.webservice.getImage(image_url) { (imageResponse) in
